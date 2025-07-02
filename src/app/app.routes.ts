@@ -4,6 +4,12 @@ import { NoAuthGuard } from './features/auth/no-auth.guard';
 
 export const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./features/home/home.component').then((p) => p.HomePageComponent),
+  },
+  {
     path: 'auth',
     loadChildren: () =>
       import('./features/auth/auth.routes').then((f) => f.authRoutes),
