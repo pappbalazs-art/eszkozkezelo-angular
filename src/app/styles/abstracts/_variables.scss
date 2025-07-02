@@ -2,20 +2,49 @@
   /* BASE COLORS */
   --background: #f7f7f7;
   --foreground: #010101;
+  --primary-color: #498af4;
+  --success-color: #17c964;
+  --warning-color: #f5a524;
+  --danger-color: #f31260;
 
   /* FONTS */
   --font-size: 16px;
-  --font-weight: 400;
+  --font-weight: 500;
   --title-font-size: 2rem;
   --title-font-weight: 800;
   --title-line-height: var(--title-font-size);
 
-  /* ELEMENT COLORS */
-  --element-background: #ffffff;
+  /* TRANSITIONS */
+  --transition-time: 0.2s;
+  --transition-timing-function: ease-in-out;
 
-  /* ELEMENT SIZES */
+  /* ELEMENT */
+  --element-background: #ffffff;
+  --element-background-secondary: #bebebe;
+  --element-foreground-secondary: #969696;
   --element-padding: 2rem;
   --element-padding-compact: 1.5rem;
   --element-flex-gap: var(--element-padding);
   --element-border-radius: var(--element-padding);
+
+  /* CARD */
+  --card-width: 450px;
+
+  /* INPUT */
+  --input-width: 350px;
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 1rem;
+  --input-margin: 1rem;
+  --input-border-width: 2px;
+  --input-border-radius: 3rem;
+  --input-transition-time: var(--transition-time);
+  --input-transition-timing-function: var(--transition-timing-function);
+  --input-label-top: calc(
+    var(--input-padding-y) + var(--input-border-width) + 1px
+  );
+  --input-label-left: calc(var(--input-padding-x) + var(--input-border-width));
+  --input-label-padding-y: 0.2rem;
+  --input-label-small-font-size: 0.8rem;
+  --input-label-transition-time: calc(var(--transition-time) - 0.05s);
+  --input-label-transition-timing-function: ease-out;
 }

@@ -1,0 +1,74 @@
+:host {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &.required label::after {
+    content: "*";
+    color: var(--danger-color);
+    margin-left: 0.1rem;
+  }
+
+  &:not(.full-width) {
+    width: var(--input-width);
+  }
+
+  &:has(+ :host) {
+    margin-bottom: var(--input-margin);
+  }
+
+  input {
+    width: 100%;
+    padding: var(--input-padding-y) var(--input-padding-x);
+    border-radius: var(--input-border-radius);
+    background: var(--element-background);
+    border: var(--input-border-width) solid var(--element-background-secondary);
+    transition: background-color var(--input-transition-time)
+        var(--input-transition-timing-function),
+      border var(--input-transition-time)
+        var(--input-transition-timing-function);
+
+    &:-webkit-autofill {
+      &,
+      &:hover,
+      &:focus {
+        -webkit-text-fill-color: var(--foreground);
+        -webkit-box-shadow: 0 0 0 40rem var(--element-background) inset;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: var(--input-border-width) solid var(--primary-color);
+
+      + label {
+        color: var(--primary-color);
+      }
+    }
+
+    &::placeholder {
+      visibility: hidden;
+    }
+
+    &:not(:placeholder-shown) + label,
+    &:focus + label {
+      top: calc(var(--input-label-small-font-size) / -2);
+      font-size: var(--input-label-small-font-size);
+    }
+  }
+
+  label {
+    position: absolute;
+    top: var(--input-label-top);
+    left: var(--input-label-left);
+    color: var(--element-foreground-secondary);
+    background-color: var(--element-background);
+    padding: 0 var(--input-label-padding-y);
+    transition: top var(--input-label-transition-time)
+        var(--input-label-transition-timing-function),
+      font-size var(--input-label-transition-time)
+        var(--input-label-transition-timing-function),
+      color var(--input-label-transition-time)
+        var(--input-label-transition-timing-function);
+  }
+}
