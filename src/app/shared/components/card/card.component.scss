@@ -1,0 +1,15 @@
+@use "abstracts/mixins";
+
+:host {
+  display: block;
+  padding: var(--element-padding);
+  border-radius: var(--element-border-radius);
+  width: calc(90vw - 2 * var(--element-padding));
+  max-width: 400px;
+  background: var(--element-background);
+
+  @include mixins.breakpoint(small) {
+    padding: var(--element-padding-compact);
+    width: calc(95vw - 2 * var(--element-padding-compact));
+  }
+}

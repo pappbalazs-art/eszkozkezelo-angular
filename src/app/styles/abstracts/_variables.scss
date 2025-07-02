@@ -1,0 +1,21 @@
+:root {
+  /* BASE COLORS */
+  --background: #f7f7f7;
+  --foreground: #010101;
+
+  /* FONTS */
+  --font-size: 16px;
+  --font-weight: 400;
+  --title-font-size: 2rem;
+  --title-font-weight: 800;
+  --title-line-height: var(--title-font-size);
+
+  /* ELEMENT COLORS */
+  --element-background: #ffffff;
+
+  /* ELEMENT SIZES */
+  --element-padding: 2rem;
+  --element-padding-compact: 1.5rem;
+  --element-flex-gap: var(--element-padding);
+  --element-border-radius: var(--element-padding);
+}
