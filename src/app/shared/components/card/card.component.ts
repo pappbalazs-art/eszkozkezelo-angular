@@ -14,5 +14,4 @@ import { CardTitleComponent } from './card-title.component';
 export class CardComponent {
   title: Signal<CardTitleComponent | undefined> =
     contentChild(CardTitleComponent);
-  hasTitle: Signal<Boolean> = computed<Boolean>(() => Boolean(this.title()));
 }
