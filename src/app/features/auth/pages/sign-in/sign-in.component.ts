@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { AuthService } from '../../auth.service';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'ek-sign-in-page',
