@@ -4,11 +4,9 @@ import { Router } from '@angular/router';
 import { Auth, user } from '@angular/fire/auth';
 import {
   signInWithEmailAndPassword,
-  signOut,
   User,
   UserCredential,
 } from '@firebase/auth';
-import { from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
