@@ -2,14 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Color } from '@type/color';
 
-import { ButtonContainerComponent } from './button-container.component';
 import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'ek-button',
   templateUrl: 'button.component.html',
   styleUrls: ['button.component.scss'],
-  imports: [CommonModule, ButtonContainerComponent, SpinnerComponent],
+  imports: [CommonModule, SpinnerComponent],
 })
 export class ButtonComponent {
   @Input() color: Color = 'primary';
