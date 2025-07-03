@@ -1,4 +1,4 @@
-import { Component, computed, contentChild, Signal } from '@angular/core';
+import { Component, contentChild, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CardContainerComponent } from './card-container.component';
@@ -12,6 +12,6 @@ import { CardTitleComponent } from './card-title.component';
   imports: [CommonModule, CardContainerComponent, CardHeaderComponent],
 })
 export class CardComponent {
-  title: Signal<CardTitleComponent | undefined> =
+  public title: Signal<CardTitleComponent | undefined> =
     contentChild(CardTitleComponent);
 }

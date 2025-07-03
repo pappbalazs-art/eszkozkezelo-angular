@@ -5,7 +5,7 @@ import { CardComponent } from '@components/card/card.component';
 import { CardTitleComponent } from '@components/card/card-title.component';
 import { CardBodyComponent } from '@components/card/card-body.component';
 import { InputComponent } from '@components/input/input.component';
-import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'ek-sign-in-page',

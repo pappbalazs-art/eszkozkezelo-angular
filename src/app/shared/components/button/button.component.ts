@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Color } from '@type/color';
-import { SpinnerComponent } from '../spinner/spinner.component';
+
 import { ButtonContainerComponent } from './button-container.component';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'ek-button',
