@@ -31,8 +31,8 @@ export class SignInPageComponent {
 
   public signIn($event: SubmitEvent): void {
     $event.preventDefault();
+
     this.isLoading = true;
-    console.log(this.email, this.password);
-    //this.authService.signInWithEmailAndPassword(this.email, this.password);
+    this.authService.signInWithEmailAndPassword(this.email, this.password);
   }
 }
