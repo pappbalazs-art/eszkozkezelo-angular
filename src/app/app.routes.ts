@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 import { AuthGuard } from '@guards/auth.guard';
 import { NoAuthGuard } from '@guards/no-auth.guard';
 
+import { authRoutes } from '@features/auth/auth.routes';
+import { categoriesRoutes } from '@features/categories/categories.routes';
+
 export const routes: Routes = [
   {
     path: '',
@@ -11,16 +14,12 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () =>
-      import('@features/auth/auth.routes').then((f) => f.authRoutes),
+    children: authRoutes,
     canActivate: [NoAuthGuard],
   },
   {
     path: 'categories',
-    loadChildren: () =>
-      import('@features/categories/categories.routes').then(
-        (f) => f.categoriesRoutes
-      ),
+    children: categoriesRoutes,
     canActivate: [AuthGuard],
   },
 ];
