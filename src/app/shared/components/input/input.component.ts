@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { InputTypes } from '@type/input-types';
+import { InputTypes } from '@type/input-types.type';
 
 @Component({
   selector: 'ek-input',
@@ -18,8 +18,8 @@ import { InputTypes } from '@type/input-types';
 export class InputComponent {
   @Input() label: string = '';
   @Input({ required: true }) type!: InputTypes;
-  @Input() isRequired: Boolean = false;
-  @Input() isFullWidth: Boolean = true;
+  @Input() isRequired: boolean = false;
+  @Input() isFullWidth: boolean = true;
   public value: ModelSignal<string> = model<string>('');
 
   @HostBinding('class.required') get required() {

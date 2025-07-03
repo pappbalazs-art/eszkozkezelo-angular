@@ -1,0 +1,62 @@
+@mixin button-background($background, $hover-background, $disabled-background) {
+  background: $background;
+
+  &:not(:disabled):hover {
+    background: $hover-background;
+  }
+
+  &:disabled {
+    background: $disabled-background;
+  }
+}
+
+button {
+  width: 100%;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  color: var(--button-font-color);
+  border-radius: var(--button-border-radius);
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color var(--button-transition-time)
+    var(--button-transition-timing-function);
+
+  &:not(.full-width) {
+    width: var(--button-width);
+  }
+
+  &:disabled {
+    cursor: text;
+  }
+
+  &.primary {
+    @include button-background(
+      var(--primary-color),
+      var(--primary-color-hover),
+      var(--primary-color-disabled)
+    );
+  }
+
+  &.success {
+    @include button-background(
+      var(--success-color),
+      var(--success-color-hover),
+      var(--success-color-disabled)
+    );
+  }
+
+  &.warning {
+    @include button-background(
+      var(--warning-color),
+      var(--warning-color-hover),
+      var(--warning-color-disabled)
+    );
+  }
+
+  &.danger {
+    @include button-background(
+      var(--danger-color),
+      var(--danger-color-hover),
+      var(--danger-color-disabled)
+    );
+  }
+}

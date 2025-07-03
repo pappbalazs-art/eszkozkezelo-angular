@@ -13,7 +13,8 @@
     width: var(--input-width);
   }
 
-  &:has(+ :host) {
+  &:has(+ :host),
+  &:has(+ ek-button) {
     margin-bottom: var(--input-margin);
   }
 

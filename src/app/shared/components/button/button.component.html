@@ -1,0 +1,11 @@
+<button
+  type="submit"
+  [disabled]="isDisabled"
+  [ngClass]="color"
+  [class.full-width]="isFullWidth"
+>
+  <ek-button-container>
+    <ek-spinner size="small" color="button-foreground" *ngIf="isLoading" />
+    <ng-content />
+  </ek-button-container>
+</button>

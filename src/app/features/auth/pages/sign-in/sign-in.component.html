@@ -1,13 +1,22 @@
 <ek-card>
   <ek-card-title>Bejelentkezés</ek-card-title>
   <ek-card-body>
-    <ek-input
-      type="email"
-      label="E-mail cím"
-      [(value)]="email"
-      [isRequired]="true"
-    />
-    <ek-input type="password" label="Jelszó" [(value)]="password" />
+    <form (submit)="signIn($event)">
+      <ek-input
+        type="email"
+        label="E-mail cím"
+        [(value)]="email"
+        [isRequired]="true"
+      />
+      <ek-input
+        type="password"
+        label="Jelszó"
+        [(value)]="password"
+        [isRequired]="true"
+      />
+      <ek-button [isDisabled]="!isFormValid()" [isLoading]="isLoading"
+        >Bejelentkezés</ek-button
+      >
+    </form>
   </ek-card-body>
-  <ek-card-footer>Itt lehetne akár valami gomb</ek-card-footer>
 </ek-card>

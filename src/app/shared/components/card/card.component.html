@@ -1,5 +1,5 @@
 <ek-card-container>
-  <ek-card-header *ngIf="hasTitle()">
+  <ek-card-header *ngIf="title()">
     <ng-content select="ek-card-title" />
   </ek-card-header>
   <ng-content select="ek-card-body" />

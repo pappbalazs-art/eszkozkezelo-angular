@@ -2,10 +2,18 @@
   /* BASE COLORS */
   --background: #f7f7f7;
   --foreground: #010101;
-  --primary-color: #498af4;
+  --primary-color: #478df6;
+  --primary-color-hover: #4686ed;
+  --primary-color-disabled: #6299ec;
   --success-color: #17c964;
-  --warning-color: #f5a524;
+  --success-color-hover: #0dc45c;
+  --success-color-disabled: #50cf87;
+  --warning-color: #fca821;
+  --warning-color-hover: #f3a62b;
+  --warning-color-disabled: #f3b249;
   --danger-color: #f31260;
+  --danger-color-hover: #e50b57;
+  --danger-color-disabled: #ee437f;
 
   /* FONTS */
   --font-size: 16px;
@@ -47,4 +55,20 @@
   --input-label-small-font-size: 0.8rem;
   --input-label-transition-time: calc(var(--transition-time) - 0.05s);
   --input-label-transition-timing-function: ease-out;
+
+  /* BUTTON */
+  --button-font-color: var(--element-background);
+  --button-width: var(--input-width);
+  --button-padding-x: var(--input-padding-x);
+  --button-padding-y: var(--input-padding-y);
+  --button-flex-gap: 0.5rem;
+  --button-border-radius: var(--input-border-radius);
+  --button-transition-time: var(--transition-time);
+  --button-transition-timing-function: var(--transition-timing-function);
+
+  /* SPINNER */
+  --spinner-size: 1.5rem;
+  --spinner-size-small: 1rem;
+  --spinner-border-width: 4px;
+  --spinner-border-width-small: 2px;
 }

@@ -1,0 +1,36 @@
+@mixin spinner-color($color) {
+  border: var(--spinner-border-width) solid $color;
+}
+
+:host {
+  display: block;
+  aspect-ratio: 1;
+  width: var(--spinner-size);
+  border-radius: 50%;
+  animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+
+  &.primary {
+    @include spinner-color(var(--primary-color));
+  }
+
+  &.success {
+    @include spinner-color(var(--success-color));
+  }
+
+  &.warning {
+    @include spinner-color(var(--warning-color));
+  }
+
+  &.danger {
+    @include spinner-color(var(--danger-color));
+  }
+
+  &.button-foreground {
+    @include spinner-color(var(--button-font-color));
+  }
+
+  &.small {
+    width: var(--spinner-size-small);
+    border-width: var(--spinner-border-width-small);
+  }
+}
