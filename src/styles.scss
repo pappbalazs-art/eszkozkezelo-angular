@@ -1,5 +1,8 @@
+@use "abstracts/variables";
+@use "abstracts/keyframes";
+
 @use "base/reset";
 @use "base/base";
 @use "base/typography";
-@use "abstracts/keyframes";
-@use "abstracts/variables";
+
+@use "components/navbar";

@@ -13,7 +13,7 @@ export const routes: Routes = [
       import('@features/home/home.component').then((p) => p.HomePageComponent),
   },
   {
-    path: 'auth',
+    path: '',
     children: authRoutes,
     canActivate: [NoAuthGuard],
   },

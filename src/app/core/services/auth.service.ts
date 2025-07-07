@@ -16,6 +16,10 @@ export class AuthService {
   private router: Router = inject(Router);
   public user: Signal<User | null | undefined> = toSignal(user(this.auth));
 
+  public isAuthenticated(): boolean {
+    return Boolean(this.auth.currentUser);
+  }
+
   public async signInWithEmailAndPassword(
     email: string,
     password: string

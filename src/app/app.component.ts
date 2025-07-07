@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+
+import { NavbarComponent } from '@components/navbar/navbar.component';
 
 @Component({
   selector: 'ek-root',
-  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
+  imports: [RouterOutlet, NavbarComponent],
 })
 export class AppComponent {}

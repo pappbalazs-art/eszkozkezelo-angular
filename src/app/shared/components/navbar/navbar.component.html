@@ -1,0 +1,15 @@
+<div class="navbar__container">
+  <div class="navbar__brand">
+    <a class="navbar__link" routerLink="/">EKKE-MKI</a>
+  </div>
+
+  @if (isAuthenticated()) { } @else {
+  <div class="navbar__nav--no-auth"></div>
+  }
+
+  <button class="navbar__toggle" (click)="toggleMenu()">
+    <span class="navbar__toggle__line"></span>
+    <span class="navbar__toggle__line"></span>
+    <span class="navbar__toggle__line"></span>
+  </button>
+</div>

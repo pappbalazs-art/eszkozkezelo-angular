@@ -26,6 +26,24 @@
   --transition-time: 0.2s;
   --transition-timing-function: ease-in-out;
 
+  /* NAVBAR */
+  --navbar-height: 70px;
+  --navbar-container-width: 90vw;
+  --navbar-item-gap: 1.2rem;
+  --navbar-menu-height: calc(100vh - var(--navbar-height));
+  --navbar-menu-font-size: 1.3rem;
+  --navbar-menu-item-padding-x: 0;
+  --navbar-menu-item-padding-y: 0.5rem;
+  --navbar-menu-item-animation-name: fade-down;
+  --navbar-menu-item-animation-duration: var(--transition-time);
+  --navbar-menu-item-animation-timing-function: var(
+    --transition-timing-function
+  );
+  --navbar-menu-transition-time: var(--transition-time);
+  --navbar-menu-transition-timing-function: var(--transition-timing-function);
+  --navbar-toggle-transition-time: var(--transition-time);
+  --navbar-toggle-transition-timing-function: var(--transition-timing-function);
+
   /* ELEMENT */
   --element-background: #ffffff;
   --element-background-secondary: #bebebe;
@@ -39,7 +57,7 @@
   --card-width: 450px;
 
   /* INPUT */
-  --input-width: 350px;
+  --input-width: auto;
   --input-padding-x: 1.5rem;
   --input-padding-y: 1rem;
   --input-margin: 1rem;
