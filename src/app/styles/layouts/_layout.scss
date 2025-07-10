@@ -1,0 +1,12 @@
+.page__wrapper {
+  position: absolute;
+  top: var(--navbar-height);
+  width: 100vw;
+  height: calc(100vh - var(--navbar-height));
+  overflow: hidden;
+
+  &:has(.container--centered) {
+    top: 0;
+    height: 100vh;
+  }
+}

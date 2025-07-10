@@ -1,32 +1,34 @@
-<div class="card__wrapper">
-  <div class="card__container">
-    <header class="card__header">
-      <div class="card__title">Bejelentkezés</div>
-    </header>
-    <main class="card__body">
-      <form (submit)="signIn($event)">
-        <div
-          class="input"
-          type="email"
-          label="E-mail cím"
-          [(value)]="email"
-          [isRequired]="true"
-        ></div>
-        <div
-          class="input"
-          type="password"
-          label="Jelszó"
-          [(value)]="password"
-          [isRequired]="true"
-        ></div>
-        <button
-          class="button"
-          [isDisabled]="!isFormValid()"
-          [isLoading]="isLoading"
-        >
-          Bejelentkezés
-        </button>
-      </form>
-    </main>
+<div class="container container--centered">
+  <div class="card__wrapper">
+    <div class="card__container">
+      <header class="card__header">
+        <div class="card__title">Bejelentkezés</div>
+      </header>
+      <main class="card__body">
+        <form (submit)="signIn($event)">
+          <div
+            class="input"
+            type="email"
+            label="E-mail cím"
+            [(value)]="email"
+            [isRequired]="true"
+          ></div>
+          <div
+            class="input"
+            type="password"
+            label="Jelszó"
+            [(value)]="password"
+            [isRequired]="true"
+          ></div>
+          <button
+            class="button"
+            [isDisabled]="!isFormValid()"
+            [isLoading]="isLoading"
+          >
+            Bejelentkezés
+          </button>
+        </form>
+      </main>
+    </div>
   </div>
 </div>

@@ -5,6 +5,9 @@
 @use "base/base";
 @use "base/typography";
 
+@use "layouts/layout";
+@use "layouts/container.scss";
+
 @use "components/navbar";
 @use "components/card";
 @use "components/input";

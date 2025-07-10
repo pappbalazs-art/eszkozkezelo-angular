@@ -1,0 +1,22 @@
+@use "../abstracts/mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-flex-gap);
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  overflow: auto;
+
+  &--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    line-height: var(--title-line-height);
+  }
+}
