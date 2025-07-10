@@ -14,7 +14,7 @@
   }
 
   &:has(+ :host),
-  &:has(+ ek-button) {
+  &:has(+ .button) {
     margin-bottom: var(--input-margin);
   }
 

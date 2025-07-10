@@ -1,0 +1,34 @@
+@use "../abstracts/mixins";
+
+.spinner {
+  display: block;
+  aspect-ratio: 1;
+  width: var(--spinner-size);
+  border-radius: 50%;
+  animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+
+  &[color="primary"] {
+    @include mixins.spinner-color(var(--primary-color));
+  }
+
+  &[color="success"] {
+    @include mixins.spinner-color(var(--success-color));
+  }
+
+  &[color="warning"] {
+    @include mixins.spinner-color(var(--warning-color));
+  }
+
+  &[color="danger"] {
+    @include mixins.spinner-color(var(--danger-color));
+  }
+
+  &[color="button-foreground"] {
+    @include mixins.spinner-color(var(--button-font-color));
+  }
+
+  &[size="small"] {
+    width: var(--spinner-size-small);
+    border-width: var(--spinner-border-width-small);
+  }
+}

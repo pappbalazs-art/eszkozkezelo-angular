@@ -14,9 +14,13 @@
         [(value)]="password"
         [isRequired]="true"
       />
-      <ek-button [isDisabled]="!isFormValid()" [isLoading]="isLoading"
-        >Bejelentkezés</ek-button
+      <button
+        class="button"
+        [isDisabled]="!isFormValid()"
+        [isLoading]="isLoading"
       >
+        Bejelentkezés
+      </button>
     </form>
   </ek-card-body>
 </ek-card>

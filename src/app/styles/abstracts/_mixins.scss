@@ -1,3 +1,23 @@
+/* COLORS */
+
+@mixin spinner-color($color) {
+  border: var(--spinner-border-width) solid $color;
+}
+
+@mixin button-colors($background, $hover-background, $disabled-background) {
+  background: $background;
+
+  &:not(:disabled):hover {
+    background: $hover-background;
+  }
+
+  &:disabled {
+    background: $disabled-background;
+  }
+}
+
+/* BREAKPOINTS */
+
 @mixin breakpoint($point) {
   @if $point == small {
     @media (max-width: 600px) {
