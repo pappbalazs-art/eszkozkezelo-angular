@@ -7,14 +7,28 @@ import {
   User,
   UserCredential,
 } from '@firebase/auth';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private auth: Auth = inject(Auth);
+  private userService: UserService = inject(UserService);
   private router: Router = inject(Router);
   public user: Signal<User | null | undefined> = toSignal(user(this.auth));
+
+  constructor() {
+    this.auth.onAuthStateChanged((user: User | null) => {
+      this.userService.fetchUser(user?.uid);
+
+      if (user) {
+        this.router.navigate(['/']);
+      } else {
+        this.router.navigate(['/sign-in']);
+      }
+    });
+  }
 
   public isAuthenticated(): boolean {
     return Boolean(this.auth.currentUser);
@@ -26,9 +40,7 @@ export class AuthService {
   ): Promise<void> {
     await signInWithEmailAndPassword(this.auth, email, password).then(
       (response: UserCredential) => {
-        if (response.user) {
-          this.router.navigate(['/']);
-        } else {
+        if (!response.user) {
           console.error('Login failed.');
         }
       }
@@ -36,8 +48,6 @@ export class AuthService {
   }
 
   public async signOut(): Promise<void> {
-    await this.auth.signOut().then(() => {
-      this.router.navigate(['/']);
-    });
+    await this.auth.signOut();
   }
 }

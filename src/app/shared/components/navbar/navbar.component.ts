@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostBinding, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AuthService } from '@services/auth.service';
 import { NavbarService } from '@services/navbar.service';
+import { AuthService } from '@services/auth.service';
+import { UserService } from '@services/user.service';
 
 import { NavbarLinkComponent } from './navbar-link.component';
 import { NoAuthNavbarContentComponent } from '@components/navbar-contents/no-auth-navbar-content.component';
@@ -20,6 +21,7 @@ import { NoAuthNavbarContentComponent } from '@components/navbar-contents/no-aut
 export class NavbarComponent {
   private navbarService: NavbarService = inject(NavbarService);
   private authService: AuthService = inject(AuthService);
+  private userService: UserService = inject(UserService);
 
   @HostBinding('class.open')
   get isMenuOpenClass() {
@@ -36,5 +38,9 @@ export class NavbarComponent {
 
   public isAuthenticated(): boolean {
     return this.authService.isAuthenticated();
+  }
+
+  public isUserAdmin(): boolean {
+    return this.userService.getUser()?.role === 'admin';
   }
 }

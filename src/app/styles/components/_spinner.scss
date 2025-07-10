@@ -31,4 +31,9 @@
     width: var(--spinner-size-small);
     border-width: var(--spinner-border-width-small);
   }
+
+  &[size="large"] {
+    width: var(--spinner-size-large);
+    border-width: var(--spinner-border-width-large);
+  }
 }

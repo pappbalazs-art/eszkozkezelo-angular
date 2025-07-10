@@ -3,9 +3,15 @@
     <a class="navbar__link" routerLink="/">EKKE-MKI</a>
   </div>
 
-  @if (isAuthenticated()) { } @else {
-  <div class="navbar__nav--no-auth"></div>
-  }
+  <div class="navbar__nav--no-auth" *ngIf="!isAuthenticated()"></div>
+  <div
+    class="navbar__nav--admin"
+    *ngIf="isAuthenticated() && isUserAdmin()"
+  ></div>
+  <div
+    class="navbar__nav--user"
+    *ngIf="isAuthenticated() && !isUserAdmin()"
+  ></div>
 
   <button class="navbar__toggle" (click)="toggleMenu()">
     <span class="navbar__toggle__line"></span>

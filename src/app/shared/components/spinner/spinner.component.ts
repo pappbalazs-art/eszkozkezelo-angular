@@ -10,7 +10,7 @@ import { Color } from '@type/color';
 export class SpinnerComponent {
   @HostBinding('size')
   @Input()
-  size: 'normal' | 'small' = 'normal';
+  size: 'normal' | 'small' | 'large' = 'normal';
 
   @HostBinding('color')
   @Input()
