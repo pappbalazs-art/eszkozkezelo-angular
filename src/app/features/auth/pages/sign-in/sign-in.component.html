@@ -1,26 +1,30 @@
-<ek-card>
-  <ek-card-title>Bejelentkezés</ek-card-title>
-  <ek-card-body>
-    <form (submit)="signIn($event)">
-      <ek-input
-        type="email"
-        label="E-mail cím"
-        [(value)]="email"
-        [isRequired]="true"
-      />
-      <ek-input
-        type="password"
-        label="Jelszó"
-        [(value)]="password"
-        [isRequired]="true"
-      />
-      <button
-        class="button"
-        [isDisabled]="!isFormValid()"
-        [isLoading]="isLoading"
-      >
-        Bejelentkezés
-      </button>
-    </form>
-  </ek-card-body>
-</ek-card>
+<div class="card__wrapper">
+  <div class="card__container">
+    <header class="card__header">
+      <div class="card__title">Bejelentkezés</div>
+    </header>
+    <main class="card__body">
+      <form (submit)="signIn($event)">
+        <ek-input
+          type="email"
+          label="E-mail cím"
+          [(value)]="email"
+          [isRequired]="true"
+        />
+        <ek-input
+          type="password"
+          label="Jelszó"
+          [(value)]="password"
+          [isRequired]="true"
+        />
+        <button
+          class="button"
+          [isDisabled]="!isFormValid()"
+          [isLoading]="isLoading"
+        >
+          Bejelentkezés
+        </button>
+      </form>
+    </main>
+  </div>
+</div>

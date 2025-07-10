@@ -1,22 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '@services/auth.service';
 
-import { CardComponent } from '@components/card/card.component';
-import { CardTitleComponent } from '@components/card/card-title.component';
-import { CardBodyComponent } from '@components/card/card-body.component';
 import { InputComponent } from '@components/input/input.component';
 import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'ek-sign-in-page',
   templateUrl: 'sign-in.component.html',
-  imports: [
-    CardComponent,
-    CardTitleComponent,
-    CardBodyComponent,
-    InputComponent,
-    ButtonComponent,
-  ],
+  imports: [InputComponent, ButtonComponent],
 })
 export class SignInPageComponent {
   private authService: AuthService = inject(AuthService);

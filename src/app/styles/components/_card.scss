@@ -1,0 +1,29 @@
+@use "../abstracts/mixins";
+
+.card {
+  &__wrapper {
+    display: block;
+    width: 90vw;
+    max-width: var(--card-width);
+    padding: var(--element-padding);
+    border-radius: var(--element-border-radius);
+    background: var(--element-background);
+
+    @include mixins.breakpoint(small) {
+      width: 95vw;
+      padding: var(--element-padding-compact);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-flex-gap);
+  }
+
+  &__title {
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    line-height: var(--title-line-height);
+  }
+}
