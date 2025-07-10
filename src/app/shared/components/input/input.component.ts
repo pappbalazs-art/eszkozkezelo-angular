@@ -10,23 +10,21 @@ import { FormsModule } from '@angular/forms';
 import { InputTypes } from '@type/input-types.type';
 
 @Component({
-  selector: 'ek-input',
+  selector: 'div.input',
   templateUrl: 'input.component.html',
-  styleUrls: ['input.component.scss'],
   imports: [CommonModule, FormsModule],
 })
 export class InputComponent {
   @Input() label: string = '';
   @Input({ required: true }) type!: InputTypes;
-  @Input() isRequired: boolean = false;
-  @Input() isFullWidth: boolean = true;
+
+  @HostBinding('class.input--required')
+  @Input()
+  isRequired: boolean = false;
+
+  @HostBinding('class.input--full-width')
+  @Input()
+  isFullWidth: boolean = true;
+
   public value: ModelSignal<string> = model<string>('');
-
-  @HostBinding('class.required') get required() {
-    return this.isRequired;
-  }
-
-  @HostBinding('class.full-width') get fullWidth() {
-    return this.isFullWidth;
-  }
 }

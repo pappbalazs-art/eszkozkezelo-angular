@@ -5,18 +5,20 @@
     </header>
     <main class="card__body">
       <form (submit)="signIn($event)">
-        <ek-input
+        <div
+          class="input"
           type="email"
           label="E-mail cím"
           [(value)]="email"
           [isRequired]="true"
-        />
-        <ek-input
+        ></div>
+        <div
+          class="input"
           type="password"
           label="Jelszó"
           [(value)]="password"
           [isRequired]="true"
-        />
+        ></div>
         <button
           class="button"
           [isDisabled]="!isFormValid()"

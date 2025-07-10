@@ -1,2 +1,7 @@
-<input [type]="type" [(ngModel)]="value" [placeholder]="label" />
-<label *ngIf="!!label">{{ label }}</label>
+<input
+  class="input__field"
+  [type]="type"
+  [(ngModel)]="value"
+  [placeholder]="label"
+/>
+<label class="input__label" *ngIf="!!label">{{ label }}</label>
