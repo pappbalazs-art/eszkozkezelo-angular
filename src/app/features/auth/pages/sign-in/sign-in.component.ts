@@ -5,7 +5,7 @@ import { InputComponent } from '@components/input/input.component';
 import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
-  selector: 'ek-sign-in-page',
+  selector: 'section.section.section--sign-in',
   templateUrl: 'sign-in.component.html',
   imports: [InputComponent, ButtonComponent],
 })

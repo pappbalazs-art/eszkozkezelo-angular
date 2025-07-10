@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ek-sign-up-page',
+  selector: 'section.section.section--sign-up',
   templateUrl: 'sign-up.component.html',
 })
 export class SignUpPageComponent {}

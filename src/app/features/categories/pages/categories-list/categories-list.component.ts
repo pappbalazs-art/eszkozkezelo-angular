@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ek-categories-list-page',
+  selector: 'section.section.section--categories-list',
   templateUrl: 'categories-list.component.html',
 })
 export class CategoriesListPageComponent {}
