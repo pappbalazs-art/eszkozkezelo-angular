@@ -1,7 +1,7 @@
 export type UserRoles = 'user' | 'admin';
 export type UserStatuses = 'active' | 'inactive';
 
-export type User = {
+export interface User {
   id: string;
   name: string;
   email: string;
@@ -9,4 +9,4 @@ export type User = {
   role: UserRoles;
   status: UserStatuses;
   user_uid: string;
-};
+}

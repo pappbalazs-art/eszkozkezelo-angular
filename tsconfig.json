@@ -21,7 +21,7 @@
     "paths": {
       "@guards/*": ["app/core/guards/*"],
       "@services/*": ["app/core/services/*"],
-      "@type/*": ["app/core/types/*"],
+      "@interfaces/*": ["app/core/interfaces/*"],
       "@features/*": ["app/features/*"],
       "@components/*": ["app/shared/components/*"],
       "@utils/*": ["app/shared/utils/*"],

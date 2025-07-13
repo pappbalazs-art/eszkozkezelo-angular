@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ek-home-page',
+  selector: 'section.section.section--home',
   templateUrl: 'home.component.html',
 })
 export class HomePageComponent {}

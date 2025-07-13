@@ -7,6 +7,8 @@ import { UserService } from '@services/user.service';
 
 import { NavbarLinkComponent } from './navbar-link.component';
 import { NoAuthNavbarContentComponent } from '@components/navbar-contents/no-auth-navbar-content.component';
+import { AdminNavbarContentComponent } from '@components/navbar-contents/admin-navbar-content.component';
+import { UserNavbarContentComponent } from '@components/navbar-contents/user-navbar-content.component';
 
 @Component({
   selector: 'nav.navbar__wrapper',
@@ -16,6 +18,8 @@ import { NoAuthNavbarContentComponent } from '@components/navbar-contents/no-aut
     RouterLink,
     NavbarLinkComponent,
     NoAuthNavbarContentComponent,
+    AdminNavbarContentComponent,
+    UserNavbarContentComponent,
   ],
 })
 export class NavbarComponent {

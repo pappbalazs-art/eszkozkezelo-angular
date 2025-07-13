@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { InputTypes } from '@type/input-types.type';
+import { InputTypes } from '@interfaces/input-types.type';
 
 @Component({
   selector: 'div.input',

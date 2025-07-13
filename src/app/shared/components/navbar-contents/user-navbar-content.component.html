@@ -1,0 +1,31 @@
+<ul class="navbar__content">
+  <div class="dropdown">
+    <div class="dropdown__trigger">
+      <span class="avatar">{{ user().name | initials }}</span>
+    </div>
+
+    <ul class="dropdown__menu">
+      <li class="dropdown__menu__item">
+        <a class="dropdown__menu__link" routerLink="/settings">
+          <span class="icon icon--settings" size="14"></span>
+          Beállítások
+        </a>
+      </li>
+      <li class="dropdown__menu__item" color="danger" (click)="signOut()">
+        <a class="dropdown__menu__link">
+          <span class="icon icon--sign-out" size="14"></span>
+          Kijelentkezés
+        </a>
+      </li>
+    </ul>
+  </div>
+</ul>
+
+<ul class="navbar__menu__container">
+  <li class="navbar__menu__item">
+    <a class="navbar__menu__link" routerLink="/settings"> Beállítások </a>
+  </li>
+  <li class="navbar__menu__item">
+    <a class="navbar__menu__link" color="danger"> Kijelentkezés </a>
+  </li>
+</ul>

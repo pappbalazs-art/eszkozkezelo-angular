@@ -8,8 +8,12 @@
 @use "layouts/layout";
 @use "layouts/container.scss";
 
+@use "components/icon";
 @use "components/navbar";
+@use "components/sidebar";
 @use "components/card";
+@use "components/avatar";
 @use "components/input";
 @use "components/spinner";
 @use "components/button";
+@use "components/dropdown";

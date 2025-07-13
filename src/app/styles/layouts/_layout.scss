@@ -9,4 +9,10 @@
     top: 0;
     height: 100vh;
   }
+
+  .sidebar__wrapper ~ & {
+    left: var(--sidebar-width);
+    width: calc(100vw - var(--sidebar-width));
+    background: var(--element-background);
+  }
 }

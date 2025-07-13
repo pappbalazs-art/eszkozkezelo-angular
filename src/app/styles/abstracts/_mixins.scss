@@ -1,5 +1,7 @@
 /* COLORS */
 
+$colors: primary, success, warning, danger;
+
 @mixin spinner-color($color) {
   border: var(--spinner-border-width) solid $color;
 }
@@ -13,6 +15,24 @@
 
   &:disabled {
     background: $disabled-background;
+  }
+}
+
+@mixin dropdown-menu-item-colors() {
+  @each $color in $colors {
+    &[color="#{$color}"] {
+      &:hover {
+        background: var(--#{$color}-color-element-background);
+      }
+
+      .dropdown__menu__link {
+        color: var(--#{$color}-color);
+
+        .icon {
+          fill: var(--#{$color}-color);
+        }
+      }
+    }
   }
 }
 

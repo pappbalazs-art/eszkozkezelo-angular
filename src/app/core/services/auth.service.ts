@@ -21,12 +21,6 @@ export class AuthService {
   constructor() {
     this.auth.onAuthStateChanged((user: User | null) => {
       this.userService.fetchUser(user?.uid);
-
-      if (user) {
-        this.router.navigate(['/']);
-      } else {
-        this.router.navigate(['/sign-in']);
-      }
     });
   }
 
@@ -40,7 +34,9 @@ export class AuthService {
   ): Promise<void> {
     await signInWithEmailAndPassword(this.auth, email, password).then(
       (response: UserCredential) => {
-        if (!response.user) {
+        if (response.user) {
+          this.router.navigate(['/']);
+        } else {
           console.error('Login failed.');
         }
       }
@@ -48,6 +44,8 @@ export class AuthService {
   }
 
   public async signOut(): Promise<void> {
-    await this.auth.signOut();
+    await this.auth.signOut().then(() => {
+      this.router.navigate(['/']);
+    });
   }
 }

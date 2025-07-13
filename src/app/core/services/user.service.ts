@@ -11,7 +11,7 @@ import {
 } from '@angular/fire/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { DocumentData } from '@angular/fire/compat/firestore';
-import { User } from '@type/user';
+import { User } from 'app/core/interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +22,8 @@ export class UserService {
   private user: WritableSignal<User | undefined> = signal(undefined);
 
   public async fetchUser(userId: string | undefined): Promise<void> {
+    this.ready.set(false);
+
     if (!userId) {
       this.ready.set(true);
 

@@ -1,0 +1,57 @@
+@use "../abstracts/mixins";
+
+.sidebar {
+  &__wrapper {
+    position: fixed;
+    top: var(--navbar-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
+    background: var(--element-background);
+
+    @include mixins.breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  &__container {
+    width: var(--sidebar-container-width);
+  }
+
+  &__menu {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sidebar-menu-flex-gap);
+      list-style: none;
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--sidebar-menu-item-flex-gap);
+      width: 100%;
+      padding: var(--sidebar-menu-item-padding-y)
+        var(--sidebar-menu-item-padding-x);
+      border-radius: var(--sidebar-menu-item-border-radius);
+      font-size: var(--sidebar-menu-item-font-size);
+      transition: background-color var(--sidebar-menu-item-transition-time)
+        var(--sidebar-menu-item-transition-timing-function);
+
+      &:hover {
+        background: var(--sidebar-menu-item-hover-background);
+      }
+
+      &.active {
+        background: var(--primary-color-element-background);
+      }
+
+      .icon {
+        fill: var(--foreground);
+      }
+    }
+  }
+}

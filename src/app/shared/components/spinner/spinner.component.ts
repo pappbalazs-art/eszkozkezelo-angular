@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostBinding, Input } from '@angular/core';
-import { Color } from '@type/color';
+import { Color } from '@interfaces/color';
 
 @Component({
   selector: 'div.spinner',

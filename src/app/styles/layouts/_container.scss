@@ -8,6 +8,14 @@
   height: calc(100vh - var(--navbar-height));
   overflow: auto;
 
+  .sidebar__wrapper ~ .page__wrapper & {
+    width: calc(100vw - var(--sidebar-width) - 2 * var(--container-rim-size));
+    height: calc(100vh - var(--navbar-height) - 2 * var(--container-rim-size));
+    background: var(--background);
+    padding: var(--container-padding);
+    border-radius: var(--container-border-radius);
+  }
+
   &--centered {
     display: flex;
     align-items: center;
@@ -18,5 +26,6 @@
     font-size: var(--title-font-size);
     font-weight: var(--title-font-weight);
     line-height: var(--title-line-height);
+    margin: 0;
   }
 }

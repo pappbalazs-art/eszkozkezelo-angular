@@ -81,6 +81,7 @@
       width: 100%;
       padding: var(--navbar-menu-item-padding-y)
         var(--navbar-menu-item-padding-x);
+      cursor: pointer;
 
       &[color="primary"] {
         color: var(--primary-color);

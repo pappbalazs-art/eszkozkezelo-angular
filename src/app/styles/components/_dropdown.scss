@@ -1,0 +1,83 @@
+@use "../abstracts/mixins";
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &__trigger {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  &__menu {
+    position: absolute;
+    width: var(--dropdown-width);
+    visibility: hidden;
+    flex-direction: column;
+    background: var(--element-background);
+    padding: var(--dropdown-padding-y) var(--dropdown-padding-x);
+    margin-top: var(--dropdown-margin);
+    margin-right: calc(var(--dropdown-margin) * -1);
+    border-radius: var(--dropdown-border-radius);
+    list-style: none;
+    box-shadow: var(--dropdown-box-shadow-size) var(--dropdown-box-shadow-color);
+    opacity: 0;
+    transform: translateY(var(--dropdown-translate-y));
+    z-index: 998;
+    transition: visibility var(--dropdown-transition-time)
+        var(--dropdown-transition-timing-function),
+      opacity var(--dropdown-transition-time)
+        var(--dropdown-transition-timing-function),
+      transform var(--dropdown-transition-time)
+        var(--dropdown-transition-timing-function);
+
+    .dropdown.open & {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .navbar__content & {
+      top: var(--navbar-dropdown-top);
+    }
+
+    &__item {
+      font-size: var(--dropdown-item-font-size);
+      border-radius: var(--dropdown-item-border-radius);
+      cursor: pointer;
+      transition: background-color var(--dropdown-item-transition-time)
+        var(--dropdown-item-transition-timing-function);
+
+      &:hover {
+        background: var(--dropdown-item-hover-background);
+      }
+
+      .dropdown.open & {
+        animation-name: var(--dropdown-item-animation-name);
+        animation-duration: var(--dropdown-item-animation-duration);
+        animation-fill-mode: backwards;
+        animation-timing-function: var(
+          --dropdown-item-animation-timing-function
+        );
+      }
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.025}s;
+        }
+      }
+
+      @include mixins.dropdown-menu-item-colors();
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--dropdown-item-flex-gap);
+      padding: var(--dropdown-item-padding-y) var(--dropdown-item-padding-x);
+    }
+  }
+}

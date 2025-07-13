@@ -4,6 +4,10 @@
 
 <ng-container *ngIf="isReady()">
   <nav class="navbar__wrapper"></nav>
+  <nav
+    class="sidebar__wrapper"
+    *ngIf="isAuthenticated() && isUserAdmin()"
+  ></nav>
 
   <main class="page__wrapper">
     <router-outlet />
