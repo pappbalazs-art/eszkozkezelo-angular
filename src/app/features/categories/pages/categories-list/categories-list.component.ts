@@ -45,8 +45,8 @@ export class CategoriesListPageComponent {
   private categoriesService: CategoryService = inject(CategoryService);
   private tableService: TableService = inject(TableService);
   public searchParam: WritableSignal<string> = signal('');
-  public categories: WritableSignal<Array<Category>> = signal([]);
-  public filteredItems: Signal<Array<Category>> = computed(() =>
+  private categories: WritableSignal<Array<Category>> = signal([]);
+  private filteredItems: Signal<Array<Category>> = computed(() =>
     this.tableService.filterItems<Category>(
       this.categories(),
       'name',
