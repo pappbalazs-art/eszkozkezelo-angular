@@ -20,7 +20,6 @@ import { ChevronDownIconComponent } from '@components/icons/chevron-down-icon.co
 })
 export class TableComponent implements OnInit {
   @Input({ required: true }) public columns!: Array<TableColumn>;
-  public items: ModelSignal<Array<any>> = model<Array<any>>([]);
   public sortDescriptor: ModelSignal<SortDescriptor> = model<SortDescriptor>(
     {} as SortDescriptor
   );
