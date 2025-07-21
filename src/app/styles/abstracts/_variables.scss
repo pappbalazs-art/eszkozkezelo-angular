@@ -67,7 +67,7 @@
   --container-border-radius: 1rem;
 
   /* NAVBAR */
-  --navbar-height: 70px;
+  --navbar-height: 80px;
   --navbar-container-width: 90vw;
   --navbar-item-gap: 1.2rem;
   --navbar-menu-height: calc(100vh - var(--navbar-height));
@@ -102,8 +102,8 @@
 
   /* ELEMENT */
   --element-background: rgb(255, 255, 255);
-  --element-background-secondary: rgb(190, 190, 190);
-  --element-foreground-secondary: rgb(150, 150, 150);
+  --element-background-secondary: rgb(240, 240, 240);
+  --element-foreground-secondary: rgb(150, 149, 149);
   --element-padding: 2rem;
   --element-padding-compact: 1.5rem;
   --element-flex-gap: var(--element-padding);
@@ -114,17 +114,17 @@
   --card-flex-gap: 2rem;
 
   /* INPUT */
-  --input-width: auto;
+  --input-width: 400px;
+  --input-height: 3.25rem;
   --input-padding-x: 1.5rem;
-  --input-padding-y: 1rem;
+  --input-padding-y: 0;
   --input-margin: 1rem;
   --input-border-width: 2px;
   --input-border-radius: 3rem;
+  --input-border-color: rgb(210, 210, 210);
   --input-transition-time: var(--transition-time);
   --input-transition-timing-function: var(--transition-timing-function);
-  --input-label-top: calc(
-    var(--input-padding-y) + var(--input-border-width) + 1px
-  );
+  --input-label-top: calc(var(--input-height) / 2 - 0.5rem - 1px);
   --input-label-left: calc(var(--input-padding-x) + var(--input-border-width));
   --input-label-padding-y: 0.2rem;
   --input-label-small-font-size: 0.8rem;
@@ -133,7 +133,8 @@
 
   /* BUTTON */
   --button-font-color: var(--element-background);
-  --button-width: var(--input-width);
+  --button-width: auto;
+  --button-height: var(--input-height);
   --button-padding-x: var(--input-padding-x);
   --button-padding-y: var(--input-padding-y);
   --button-flex-gap: 0.5rem;
@@ -179,4 +180,23 @@
   --dropdown-item-animation-name: fade-down;
   --dropdown-item-animation-duration: 0.25s;
   --dropdown-item-animation-timing-function: var(--transition-timing-function);
+
+  /* TABLE */
+  --table-flex-gap: 1.5rem;
+  --table-container-padding: 1.5rem;
+  --table-container-border-radius: 2rem;
+  --table-row-border-radius: 3rem;
+  --table-head-item-padding-x: 1.5rem;
+  --table-head-item-padding-y: 0.7rem;
+  --table-animation-name: fade;
+  --table-animation-duration: 0.3s;
+  --table-animation-timing-function: var(--transition-timing-function);
+  --table-head-animation-name: fade;
+  --table-head-animation-duration: 0.35s;
+  --table-head-animation-timing-function: var(--transition-timing-function);
+  --table-column-padding-x: var(--table-head-item-padding-x);
+  --table-column-padding-y: var(--table-head-item-padding-y);
+  --table-row-animation-name: fade-down;
+  --table-row-animation-duration: 0.25s;
+  --table-row-animation-timing-function: var(--transition-timing-function);
 }

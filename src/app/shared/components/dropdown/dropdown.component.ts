@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
 import {
   Component,
-  ContentChild,
-  ContentChildren,
+  contentChild,
+  contentChildren,
   ElementRef,
   HostBinding,
-  QueryList,
   Renderer2,
+  Signal,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -20,10 +19,15 @@ import { DropdownMenuItemComponent } from './dropdown-menu-item.component';
 export class DropdownComponent {
   public isOpen: WritableSignal<boolean> = signal(false);
 
-  @ContentChild(DropdownTriggerComponent)
-  dropdownTrigger!: DropdownTriggerComponent;
-  @ContentChildren('div.dropdown__menu__item', { descendants: true })
-  dropdownItems!: QueryList<DropdownMenuItemComponent>;
+  dropdownTrigger: Signal<DropdownTriggerComponent> = contentChild.required(
+    DropdownTriggerComponent
+  );
+  dropdownItems: Signal<readonly DropdownMenuItemComponent[]> = contentChildren(
+    DropdownMenuItemComponent,
+    {
+      descendants: true,
+    }
+  );
 
   @HostBinding('class.open')
   get openClassAttribute(): boolean {
@@ -43,11 +47,11 @@ export class DropdownComponent {
   }
 
   ngAfterViewInit() {
-    this.dropdownTrigger.clickEvent.subscribe(() => {
+    this.dropdownTrigger().clickEvent.subscribe(() => {
       this.toggle();
     });
 
-    this.dropdownItems.map((dropdownItem: DropdownMenuItemComponent) => {
+    this.dropdownItems().map((dropdownItem: DropdownMenuItemComponent) => {
       dropdownItem.clickEvent.subscribe(() => {
         this.close();
       });

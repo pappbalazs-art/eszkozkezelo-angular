@@ -7,16 +7,17 @@
     width: var(--input-width);
   }
 
-  &:has(+ .input),
-  &:has(+ .button) {
+  .form &:has(+ .input),
+  .form &:has(+ .button) {
     margin-bottom: var(--input-margin);
   }
 
   &__field {
     width: 100%;
+    height: var(--input-height);
     padding: var(--input-padding-y) var(--input-padding-x);
     background: var(--element-background);
-    border: var(--input-border-width) solid var(--element-background-secondary);
+    border: var(--input-border-width) solid var(--input-border-color);
     border-radius: var(--input-border-radius);
     transition: background-color var(--input-transition-time)
         var(--input-transition-timing-function),
@@ -40,6 +41,10 @@
     &::placeholder {
       visibility: hidden;
     }
+
+    .table__header & {
+      background: var(--background);
+    }
   }
 
   &__label {
@@ -47,7 +52,7 @@
     top: var(--input-label-top);
     left: var(--input-label-left);
     color: var(--element-foreground-secondary);
-    background-color: var(--element-background);
+    background: var(--element-background);
     padding: 0 var(--input-label-padding-y);
     transition: top var(--input-label-transition-time)
         var(--input-label-transition-timing-function),
@@ -70,6 +75,10 @@
       content: "*";
       color: var(--danger-color);
       margin-left: 0.1rem;
+    }
+
+    .table__header & {
+      background: var(--background);
     }
   }
 }

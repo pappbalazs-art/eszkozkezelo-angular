@@ -1,5 +1,6 @@
 .icon {
-  display: block;
+  display: inline-flex;
+  justify-content: center;
   aspect-ratio: 1;
 
   @for $i from 1 through 50 {

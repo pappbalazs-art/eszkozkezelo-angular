@@ -1,3 +1,53 @@
 <div class="container">
   <h1 class="container__title">Kategóriák</h1>
+
+  <div
+    class="table__wrapper"
+    [columns]="tableColumns"
+    [items]="categories()"
+    [(sortDescriptor)]="sortDescriptor"
+    *ngIf="!isLoading()"
+  >
+    <header class="table__header">
+      <div
+        class="input"
+        type="search"
+        label="Keresés..."
+        [(value)]="searchParam"
+        [isFullWidth]="false"
+      ></div>
+      <button class="button" [isFullWidth]="false">
+        <span class="icon icon--plus" size="14"></span>
+        Új eszköz hozzáadása
+      </button>
+    </header>
+    @for (item of sortedItems(); track item.id) {
+    <tr class="table__row">
+      <td class="table__column">{{ item.name }}</td>
+      <td class="table__column">{{ item.numberOfItems }}</td>
+      <td class="table__column">
+        <div class="dropdown">
+          <div class="dropdown__trigger">
+            <span class="icon icon--ellipsis-vertical" size="14"></span>
+          </div>
+
+          <ul class="dropdown__menu">
+            <li class="dropdown__menu__item">
+              <a class="dropdown__menu__link">
+                <span class="icon icon--edit" size="14"></span>
+                Szerkesztés
+              </a>
+            </li>
+            <li class="dropdown__menu__item" color="danger">
+              <a class="dropdown__menu__link">
+                <span class="icon icon--delete" size="14"></span>
+                Törlés
+              </a>
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+    }
+  </div>
 </div>

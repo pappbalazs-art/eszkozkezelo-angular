@@ -1,0 +1,28 @@
+<ng-content select="header.table__header"></ng-content>
+
+<table class="table__container">
+  <thead class="table__head">
+    <tr class="table__head__container">
+      @for (column of columns; track column.key) {
+      <th class="table__head__item" (click)="setSortDescriptor(column.key)">
+        {{ column.label }}
+        <span
+          class="icon icon--chevron-down"
+          [ngClass]="
+            (sortDescriptor().key === column.key &&
+              sortDescriptor().direction) ||
+            ''
+          "
+          size="14"
+          *ngIf="column.label"
+        ></span>
+      </th>
+      }
+    </tr>
+  </thead>
+  <tbody class="table__body">
+    <ng-content />
+  </tbody>
+</table>
+
+<ng-content select="footer.table__footer"></ng-content>
