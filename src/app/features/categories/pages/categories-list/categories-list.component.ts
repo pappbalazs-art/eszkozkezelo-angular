@@ -11,8 +11,13 @@ import { Category } from '@interfaces/category';
 import { TableColumn } from '@interfaces/table';
 import { SortDescriptor } from '@interfaces/sort-descriptor';
 import { CategoryService } from '@services/category.service';
+import { ModalService } from '@services/modal.service';
 import { TableService } from '@services/table.service';
 
+import { ModalsWrapper } from '@components/modal/modals-wrapper.component';
+import { CreateCategoryModalComponent } from '@features/categories/components/create-category-modal.component';
+import { EditCategoryModalComponent } from '@features/categories/components/edit-category-modal.component';
+import { DeleteCategoryModalComponent } from '@features/categories/components/delete-category-modal.component';
 import { TableComponent } from '@components/table/table.component';
 import { InputComponent } from '@components/input/input.component';
 import { ButtonComponent } from '@components/button/button.component';
@@ -29,6 +34,10 @@ import { DeleteIconComponent } from '@components/icons/delete-icon.component';
   templateUrl: 'categories-list.component.html',
   imports: [
     CommonModule,
+    ModalsWrapper,
+    CreateCategoryModalComponent,
+    EditCategoryModalComponent,
+    DeleteCategoryModalComponent,
     TableComponent,
     InputComponent,
     ButtonComponent,
@@ -43,9 +52,15 @@ import { DeleteIconComponent } from '@components/icons/delete-icon.component';
 })
 export class CategoriesListPageComponent {
   private categoriesService: CategoryService = inject(CategoryService);
+  private modalService: ModalService = inject(ModalService);
   private tableService: TableService = inject(TableService);
+
   public searchParam: WritableSignal<string> = signal('');
-  private categories: WritableSignal<Array<Category>> = signal([]);
+  public selectedCategory: WritableSignal<Category | undefined> =
+    signal(undefined);
+
+  private categories: WritableSignal<Array<Category>> =
+    this.categoriesService.categories;
   private filteredItems: Signal<Array<Category>> = computed(() =>
     this.tableService.filterItems<Category>(
       this.categories(),
@@ -79,14 +94,24 @@ export class CategoriesListPageComponent {
   ];
 
   constructor() {
-    this.categoriesService
-      .fetchAllCategories()
-      .then((categories: Array<Category>): void => {
-        this.categories.set(categories);
-      });
+    this.categoriesService.fetchAllCategories();
   }
 
   public isLoading(): boolean {
     return this.categoriesService.isLoading();
+  }
+
+  public openCreateCategoryModal(): void {
+    this.modalService.openModal('create-category-modal');
+  }
+
+  public openEditCategoryModal(selectedCategory: Category): void {
+    this.selectedCategory.set(selectedCategory);
+    this.modalService.openModal('edit-category-modal');
+  }
+
+  public openDeleteCategoryModal(selectedCategory: Category): void {
+    this.selectedCategory.set(selectedCategory);
+    this.modalService.openModal('delete-category-modal');
   }
 }

@@ -1,0 +1,23 @@
+<div class="modal__container">
+  <header class="modal__header">
+    <h1 class="modal__title">Új kategória hozzáadása</h1>
+  </header>
+  <main class="modal__body">
+    <form class="form" (submit)="createCategory($event)">
+      <div
+        class="input"
+        type="text"
+        label="Megnevezés"
+        [(value)]="categoryName"
+        [isRequired]="true"
+      ></div>
+      <button
+        class="button"
+        [isDisabled]="!isFormValid()"
+        [isLoading]="isLoading"
+      >
+        Hozzáadás
+      </button>
+    </form>
+  </main>
+</div>

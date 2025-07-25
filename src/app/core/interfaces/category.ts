@@ -3,3 +3,7 @@ export interface Category {
   name: string;
   numberOfItems: number;
 }
+
+export interface CategoryDraft {
+  name: string;
+}

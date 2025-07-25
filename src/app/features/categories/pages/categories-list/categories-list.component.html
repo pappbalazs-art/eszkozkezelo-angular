@@ -1,3 +1,15 @@
+<div class="modals__wrapper">
+  <div class="modal modal--create-category"></div>
+  <div
+    class="modal modal--edit-category"
+    [selectedCategory]="selectedCategory()"
+  ></div>
+  <div
+    class="modal modal--delete-category"
+    [category]="selectedCategory()"
+  ></div>
+</div>
+
 <div class="container">
   <h1 class="container__title">Kategóriák</h1>
 
@@ -15,7 +27,11 @@
         [(value)]="searchParam"
         [isFullWidth]="false"
       ></div>
-      <button class="button" [isFullWidth]="false">
+      <button
+        class="button"
+        [isFullWidth]="false"
+        (click)="openCreateCategoryModal()"
+      >
         <span class="icon icon--plus" size="14"></span>
         Új eszköz hozzáadása
       </button>
@@ -31,13 +47,20 @@
           </div>
 
           <ul class="dropdown__menu">
-            <li class="dropdown__menu__item">
+            <li
+              class="dropdown__menu__item"
+              (click)="openEditCategoryModal(item)"
+            >
               <a class="dropdown__menu__link">
                 <span class="icon icon--edit" size="14"></span>
                 Szerkesztés
               </a>
             </li>
-            <li class="dropdown__menu__item" color="danger">
+            <li
+              class="dropdown__menu__item"
+              color="danger"
+              (click)="openDeleteCategoryModal(item)"
+            >
               <a class="dropdown__menu__link">
                 <span class="icon icon--delete" size="14"></span>
                 Törlés

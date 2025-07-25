@@ -1,0 +1,23 @@
+<div class="modal__container">
+  <header class="modal__header">
+    <h1 class="modal__title">Kategória szerkesztése</h1>
+  </header>
+  <main class="modal__body">
+    <form class="form" (submit)="updateCategory($event)">
+      <div
+        class="input"
+        type="text"
+        label="Megnevezés"
+        [(value)]="categoryName"
+        [isRequired]="true"
+      ></div>
+      <button
+        class="button"
+        [isDisabled]="!isFormValid()"
+        [isLoading]="isLoading"
+      >
+        Mentés
+      </button>
+    </form>
+  </main>
+</div>

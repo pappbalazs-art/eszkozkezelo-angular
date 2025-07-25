@@ -52,7 +52,7 @@
   /* FONTS */
   --font-size: 16px;
   --font-weight: 500;
-  --title-font-size: 2rem;
+  --title-font-size: 1.75rem;
   --title-font-weight: 800;
   --title-line-height: var(--title-font-size);
 
@@ -105,17 +105,17 @@
   --element-background-secondary: rgb(240, 240, 240);
   --element-foreground-secondary: rgb(150, 149, 149);
   --element-padding: 2rem;
-  --element-padding-compact: 1.5rem;
+  --element-padding-compact: 1.75rem;
   --element-flex-gap: var(--element-padding);
   --element-border-radius: var(--element-padding);
 
   /* CARD */
   --card-width: 450px;
-  --card-flex-gap: 2rem;
+  --card-flex-gap: 1.75rem;
 
   /* INPUT */
   --input-width: 400px;
-  --input-height: 3.25rem;
+  --input-height: 3.5rem;
   --input-padding-x: 1.5rem;
   --input-padding-y: 0;
   --input-margin: 1rem;
@@ -199,4 +199,12 @@
   --table-row-animation-name: fade-down;
   --table-row-animation-duration: 0.25s;
   --table-row-animation-timing-function: var(--transition-timing-function);
+
+  /* MODAL */
+  --modals-wrapper-background: rgba(0, 0, 0, 0.35);
+  --modal-width: var(--card-width);
+  --modal-flex-gap: var(--card-flex-gap);
+  --modal-closed-scale: 0.8;
+  --modal-transition-time: var(--transition-time);
+  --modal-transition-timing-function: var(--transition-timing-function);
 }

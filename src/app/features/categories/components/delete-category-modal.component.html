@@ -1,0 +1,19 @@
+<div class="modal__container">
+  <header class="modal__header">
+    <h1 class="modal__title">Kategória törlése</h1>
+  </header>
+  <main class="modal__body">
+    Biztos benne, hogy törölni szeretné a(z)
+    <b>{{ category?.name }}</b> kategóriát?
+  </main>
+  <footer class="modal__footer">
+    <button
+      class="button"
+      color="danger"
+      [isLoading]="isLoading"
+      (click)="deleteCategory()"
+    >
+      Törlés
+    </button>
+  </footer>
+</div>
